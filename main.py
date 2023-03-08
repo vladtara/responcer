@@ -25,3 +25,7 @@ async def root(r: Request):
 @app.get("/ip")
 async def get_ip(r: Request):
     return {"IP": r.headers["x-real-ip"] if "x-real-ip" in r.headers.keys() else r.client.host}
+
+@app.get("/api/v1")
+async def version(r: Request):
+    return {"Version": "version 3.0.0"}
