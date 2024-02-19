@@ -26,7 +26,7 @@ async def get_ip(r: Request):
 
 @app.get("/api/v1/version")
 async def version(r: Request):
-    return {"Version": "version 3.0.0"}
+    return {"Version": "version 1.0.0"}
 
 @app.get("/metrics")
 async def version(r: Request):
