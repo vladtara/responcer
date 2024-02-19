@@ -13,7 +13,6 @@ templates = Jinja2Templates(directory="templates")
 class ip(BaseModel):
     ip: str
 
-
 @app.get("/")
 async def root(r: Request):
     hostname = platform.node()
@@ -21,11 +20,20 @@ async def root(r: Request):
         [("remoteAddr", r.client.host), ("remotePort", r.client.port)]
     return templates.TemplateResponse("index.html", {"request": r, 'hostname': hostname, "headers": data})
 
-
-@app.get("/ip")
+@app.get("api/v1/ip")
 async def get_ip(r: Request):
     return {"IP": r.headers["x-real-ip"] if "x-real-ip" in r.headers.keys() else r.client.host}
 
-@app.get("/api/v1")
+@app.get("/api/v1/version")
 async def version(r: Request):
     return {"Version": "version 3.0.0"}
+
+@app.get("/metrics")
+async def version(r: Request):
+    data = r.headers.items() + \
+        [("remoteAddr", r.client.host), ("remotePort", r.client.port)]
+    return {"data": data}
+
+@app.get("/health")
+async def version(r: Request):
+    return {"health": True}
