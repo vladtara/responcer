@@ -6,7 +6,12 @@
 
 ### Using
 ```
-docker
+docker run -it --rm -p 8000:8000 glapss/responcer:latest
 ```
 
 ### Endpoints
+
+* /api/v1/ip - return your external IP.
+* /api/v1/version - return the version of the app.
+* /metrics - return metrics.
+* /health - return the status of the app.

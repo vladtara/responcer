@@ -13,6 +13,7 @@ templates = Jinja2Templates(directory="templates")
 
 class ip(BaseModel):
     ip: str
+    port: int
 
 @app.get("/")
 async def root(r: Request):
