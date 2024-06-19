@@ -1,5 +1,6 @@
 import platform
 import psutil
+import os
 from fastapi import FastAPI, Request
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
@@ -8,8 +9,14 @@ import uvicorn
 
 
 app = FastAPI()
-app.mount("/static", StaticFiles(directory="static"), name="static")
-templates = Jinja2Templates(directory="templates")
+app.mount(
+    "/static",
+    StaticFiles(directory=os.path.join(os.path.dirname(__file__), "../static")),
+    name="static",
+)
+templates = Jinja2Templates(
+    directory=os.path.join(os.path.dirname(__file__), "../templates")
+)
 
 
 class ip(BaseModel):
