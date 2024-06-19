@@ -16,33 +16,31 @@
                 Responcer
             </h1>
             <p class="has-text-danger-light box">Response from: <strong>{{hostname}}</strong></p>
-            <br>
         </div>
-        <hr>
-
-        <div class="container">
-            <div class="content">
-                <h3><b>Result:</b></h3>
+        <div class="container box">
+            <div class="container ">
+                <div class="content">
+                    <h3><b>Result:</b></h3>
+                </div>
             </div>
-        </div>
-        <br>
-        <div class="container">
-            <table class="table is-bordered">
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Value</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {% for i in headers %}
-                    <tr>
-                        <td>{{i[0]}}</td>
-                        <td>{{i[1]}}</td>
-                    </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
+            <div class="container">
+                <table class="table is-bordered">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Value</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for i in headers %}
+                        <tr>
+                            <td>{{i[0]}}</td>
+                            <td>{{i[1]}}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
         </div>
     </section>
 </body>
