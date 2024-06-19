@@ -11,14 +11,12 @@ import uvicorn
 app = FastAPI()
 app.mount(
     "/static",
-    StaticFiles(directory=pathlib.Path(__file__).parent.parent / "static"),
+    StaticFiles(directory=pathlib.Path(__file__).parent / "static"),
     name="static",
 )
 
 
-templates = Jinja2Templates(
-    directory=pathlib.Path(__file__).parent.parent / "templates"
-)
+templates = Jinja2Templates(directory=pathlib.Path(__file__).parent / "templates")
 
 
 class ip(BaseModel):
