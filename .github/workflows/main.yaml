@@ -32,6 +32,9 @@ jobs:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
+      - name: test
+        run: |
+          echo ${SHORT_SHA}
 
       - name: Build and push
         uses: docker/build-push-action@v4
