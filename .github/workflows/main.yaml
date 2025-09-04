@@ -30,7 +30,7 @@ jobs:
         uses: docker/metadata-action@v5
         with:
           images: |
-            glapss/${{ github.repository }}
+            glapss/responcer
             ghcr.io/${{ github.repository }}
           tags: |
             type=sha

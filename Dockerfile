@@ -10,7 +10,6 @@ RUN pip wheel --no-cache-dir --wheel-dir /app/wheels .
 FROM python:3.13-alpine3.21
 WORKDIR /app
 COPY --from=builder /app/wheels/ /tmp/wheels
-RUN ls -la
 RUN pip install --no-cache /tmp/wheels/* && rm -rf /tmp/wheels
 EXPOSE 8000/tcp
 ENTRYPOINT ["responcer"]
