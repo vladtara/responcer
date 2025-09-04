@@ -39,7 +39,7 @@ jobs:
           push: true
           platforms: linux/amd64
           tags: |
-            glapss/responcer:$SHORT_SHA
+            glapss/responcer:${SHORT_SHA}
             glapss/responcer:latest
             ghcr.io/${{ github.repository }}:latest
-            ghcr.io/${{ github.repository }}:$SHORT_SHA
+            ghcr.io/${{ github.repository }}:${SHORT_SHA}
