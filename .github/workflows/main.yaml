@@ -36,7 +36,7 @@ jobs:
           push: true
           platforms: linux/amd64
           tags: |
-            glapss/responcer:${{ github.sha::7) }}
+            glapss/responcer:${{ github.sha::0:7) }}
             glapss/responcer:latest
             ghcr.io/${{ github.repository }}:latest
-            ghcr.io/${{ github.repository }}:${{ github.sha::7) }}
+            ghcr.io/${{ github.repository }}:${{ github.sha::0:7) }}
